@@ -13,9 +13,8 @@ LiquidCrystal_I2C lcd(0x27, 16, 2);  // set the LCD address to 0x27, change if L
 Adafruit_BME280 bme;                 // BME Sensor
 
 
-/*
-Equates pins to names
-*/
+
+//Equate pins to names
 int moistureSensor = A3;  //Pin A3 (analog pin 3)
 int hallEffectSensor = 7; //Pin 7 for Hall Effect Sensor Reading
 int solenoid = 5;         //Pin 5 for Solenoid Control
@@ -24,29 +23,25 @@ int speaker = 6;          //Pin 4 Speaker Control
 
 
 
-/* 
-Moisture Sensor Variables
-*/
+
+//Moisture Sensor Variables
 int moistureVal = 0;
 
 
-/*
-Variables for water timing
-*/
+
+//Variables for water timing
 int waterTimer = 0;
 
 
 void setup() {
   
-  /*
-  Serial Monitor 
-  */
+
+  //Serial Monitor 
   Serial.begin(9600);
 
 
-  /*
-  Input and Output Pin Enables
-  */
+
+  //Input and Output Pin Enables
   pinMode(hallEffectSensor, INPUT);  //Pin 7 is input for Hall Effect Sensor
   pinMode(moistureSensor, INPUT); //Pin A3 is input for Moisture Sensor
 
@@ -54,25 +49,21 @@ void setup() {
   pinMode(speaker, OUTPUT); //Pin 6 = Output for Speaker
 
 
-  /*
-  LCD initialization
-  */
+  //LCD initialization
   lcd.init();     // initialize the lcd
   lcd.backlight();  // Turn on the LCD screen backlight
 
 
-  /*
-  Enable Interrupts
-  */
+  
+  //Enable Interrupts
   cli();
   PCICR |= 0b00000100;    // turn on port D
   PCMSK2 |= 0b10000000; //Enable interrupts on pin 7
   sei();
 
 
-  /*
-  Check if the BME sensor is detected
-  */
+  
+  //Check if the BME sensor is detected
   unsigned status;
   status = bme.begin(0x76); //Change this value for a different BME address
   if (!status) {
