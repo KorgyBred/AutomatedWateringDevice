@@ -1,5 +1,5 @@
 # AutomatedWateringDevice
-A simple control system to atuomtaically water a plant, or group of plants. 
+A simple control system to automtaically water a plant, or group of plants. 
 
 This system will utilize the Arduino UNO (rev3) or similar varients using the atmega328P as the brain and implement various sensors for data collection and control.
 
