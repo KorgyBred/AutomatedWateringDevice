@@ -3,7 +3,7 @@ A simple control system to atuomtaically water a plant, or group of plants.
 
 This system will utilize the Arduino UNO (rev3) or similar varients using the atmega328P as the brain and implement various sensors for data collection and control.
 
-Sensors Utilized: 
+I/O Utilized: 
 
 I2C Adapter: Connects the BME and LCD using less pins
 BME280 Temp/Pressure Sensor: For local tempurature and Humidity
